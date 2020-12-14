@@ -34,7 +34,7 @@ void print()
     cout << a.z << " " << a.x << "\n";
 }
 
-class B : A
+class B : public A
 {
 public:
     void print(void) const
@@ -66,11 +66,13 @@ int main()
     std::cout << "Example application has started\n";
 
     B b;
+    b.y = 4;
     b.print();
     print();
 
     C c;
     c.print();
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
