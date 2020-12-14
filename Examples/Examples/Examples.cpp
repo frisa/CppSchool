@@ -17,15 +17,22 @@ public:
 protected:
     int z;
 
+public:
     A()
     {
         x = 1;
         y = 2;
         z = 3;
+        cout << __FUNCTION__ << std::endl;
     }
 
     friend class C;
     friend void print();
+
+    ~A()
+    {
+        cout << __FUNCTION__ << std::endl;
+    }
 };
 
 void print()
@@ -122,6 +129,11 @@ struct SB : public SA
     }
 };
 
+void fcn(int &i)
+{
+    i = 123;
+}
+
 int main()
 {
     std::cout << "Example application has started\n";
@@ -147,6 +159,13 @@ int main()
 
     VA* vab = new VB();
     vab->vfcn();
+
+    int x = 1;
+    fcn(x);
+
+    A* pa = new A[10];
+    delete []pa;
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
