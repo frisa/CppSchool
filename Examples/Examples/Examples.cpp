@@ -76,8 +76,45 @@ public:
 
 // VIRTUAL DESTRUCTOR
 //============================================================
+class VA
+{
+    int x;
+public:
+    VA()
+    {
+        x = 1;
+    }
 
-struct SB : SA
+public:
+    void fcn()
+    {
+        cout << "call:" << __FUNCTION__ << std::endl;
+    };
+    virtual void pvfcn() = 0;
+    virtual void vfcn()
+    {
+        cout << __FUNCTION__ << std::endl;
+    };
+    virtual void vfcn2()
+    {
+        cout << __FUNCTION__ << std::endl;
+    };
+};
+
+class VB : public VA
+{
+public:
+    void pvfcn()
+    {
+        cout << __FUNCTION__ << std::endl;
+    }
+    void vfcn()
+    {
+        cout << __FUNCTION__ << std::endl;
+    }
+};
+
+struct SB : public SA
 {
     void print()
     {
@@ -102,6 +139,14 @@ int main()
     SB sb;
     sb.x = 1;
     sb.print();
+
+    cout << "sizeof(VA): " << sizeof(VA) << std::endl;
+    VB vb;
+    vb.pvfcn();
+    vb.vfcn();
+
+    VA* vab = new VB();
+    vab->vfcn();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
