@@ -157,47 +157,47 @@ public:
     }
 };
 
-int main()
-{
-// CPP 11
-//============================================================================
-    RC ra(99999);
-    RC rb(ra);
-    RC rc = std::move(ra);
-
-// CPP QUIZ
-//============================================================================
-    std::cout << "Example application has started\n";
-
-    B b;
-    b.y = 4;
-    b.print();
-    print();
-
-    C c;
-    c.print();
-
-    SA sa;
-    sa.x = 2;
-    SB sb;
-    sb.x = 1;
-    sb.print();
-
-    cout << "sizeof(VA): " << sizeof(VA) << std::endl;
-    VB vb;
-    vb.pvfcn();
-    vb.vfcn();
-
-    VA* vab = new VB();
-    vab->vfcn();
-
-    int x = 1;
-    fcn(x);
-
-    A* pa = new A[10];
-    delete []pa;
-
-}
+//int main()
+//{
+//// CPP 11
+////============================================================================
+//    RC ra(99999);
+//    RC rb(ra);
+//    RC rc = std::move(ra);
+//
+//// CPP QUIZ
+////============================================================================
+//    std::cout << "Example application has started\n";
+//
+//    B b;
+//    b.y = 4;
+//    b.print();
+//    print();
+//
+//    C c;
+//    c.print();
+//
+//    SA sa;
+//    sa.x = 2;
+//    SB sb;
+//    sb.x = 1;
+//    sb.print();
+//
+//    cout << "sizeof(VA): " << sizeof(VA) << std::endl;
+//    VB vb;
+//    vb.pvfcn();
+//    vb.vfcn();
+//
+//    VA* vab = new VB();
+//    vab->vfcn();
+//
+//    int x = 1;
+//    fcn(x);
+//
+//    A* pa = new A[10];
+//    delete []pa;
+//
+//}
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
