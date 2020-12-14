@@ -61,6 +61,30 @@ public:
     }
 };
 
+//STRUCT
+//==========================================================
+
+struct SA 
+{
+    int x;
+public:
+    SA()
+    {
+        x = 1;
+    }
+};
+
+// VIRTUAL DESTRUCTOR
+//============================================================
+
+struct SB : SA
+{
+    void print()
+    {
+        cout << x << std::endl;
+    }
+};
+
 int main()
 {
     std::cout << "Example application has started\n";
@@ -73,6 +97,11 @@ int main()
     C c;
     c.print();
 
+    SA sa;
+    sa.x = 2;
+    SB sb;
+    sb.x = 1;
+    sb.print();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
