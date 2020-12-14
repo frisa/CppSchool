@@ -134,8 +134,39 @@ void fcn(int &i)
     i = 123;
 }
 
+class RC
+{
+    int* arr;
+    size_t s;
+public:
+    RC(size_t s): s(s)
+    {
+        arr = new int[s];
+    }
+    // copy constructor
+    RC(const RC& other)
+    {
+        arr = new int[s];
+        memcpy(this->arr, other.arr, s);
+    }
+    // move constructor
+    RC(const RC&& other)
+    {
+        this->arr = other.arr;
+        this->s = other.s;
+    }
+};
+
 int main()
 {
+// CPP 11
+//============================================================================
+    RC ra(99999);
+    RC rb(ra);
+    RC rc = std::move(ra);
+
+// CPP QUIZ
+//============================================================================
     std::cout << "Example application has started\n";
 
     B b;
